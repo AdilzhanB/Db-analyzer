@@ -1,69 +1,81 @@
-# React + TypeScript + Vite
+# Advanced SQL Database Analyzer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A powerful tool for analyzing SQLite databases with advanced visualizations, statistical analysis, and AI-powered insights.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Database Schema Analysis**: Visualize your database structure and relationships with ER diagrams
+- **Statistical Analysis**: Get detailed mathematical and statistical insights into your data
+- **Advanced Analytics**: Create custom visualizations with multiple chart types
+- **Correlation Analysis**: Automatically detect relationships between different data points
+- **Gemini AI Assistant**: Chat with an AI assistant to gain deeper insights about your database
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React with TypeScript
+- Material UI for modern, responsive design
+- Chart.js and Recharts for data visualization
+- SQL.js for in-browser SQLite operations
+- Google Generative AI (Gemini) for intelligent database analysis
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+```
+git clone https://github.com/yourusername/db-analyzer.git
+cd db-analyzer
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies
 ```
+cd frontend
+npm install
+```
+
+3. Get a Gemini API key
+   - Visit [Google AI Studio](https://makersuite.google.com/)
+   - Create an API key
+   - Create a `.env` file at the root (copy from `.env.example`) 
+   - Add your API key to the `.env` file as `VITE_GEMINI_API_KEY=your_key_here`
+   - Alternatively, directly replace the placeholder in `src/components/GeminiChat.tsx` with your key
+
+4. Start the development server
+```
+npm run dev
+```
+
+## Usage
+
+1. Upload your SQLite database (.sqlite, .db, or .sql file)
+2. Explore the database schema, including tables, columns, and relationships
+3. View mathematical analysis with detailed statistics about your data
+4. Create custom visualizations in the Advanced Analytics tab
+5. Chat with the Gemini AI assistant to ask questions about your database
+
+## Screenshots
+
+![Schema Analysis](path/to/schema-screenshot.png)
+![Statistical Analysis](path/to/stats-screenshot.png)
+![Advanced Analytics](path/to/analytics-screenshot.png)
+![Gemini AI Chat](path/to/chat-screenshot.png)
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+
+- SQLite for the amazing database engine
+- Google for the Gemini AI API
+- The open-source community for all the fantastic libraries that made this possible
